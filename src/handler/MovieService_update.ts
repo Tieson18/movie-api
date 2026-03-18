@@ -1,8 +1,9 @@
+import type { Context } from "openapi-backend";
 import { movies } from "../store/movieStore.ts";
 import type { Request, Response } from "express";
 
 export function MovieService_update(
-  c: any,
+  c: Context,
   _req: Request,
   res: Response,
 ): void {
