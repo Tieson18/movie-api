@@ -6,13 +6,12 @@ import YAML from "yamljs";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-// Import handlers
 import { MovieService_list } from "./handler/MovieService_list.ts";
+import { MovieService_create } from "./handler/MovieService_create.ts";
 import { MovieService_get } from "./handler/MovieService_get.ts";
 import { MovieService_update } from "./handler/MovieService_update.ts";
 import { MovieService_delete } from "./handler/MovieService_delete.ts";
 import { MovieService_stats } from "./handler/MovieService_stats.ts";
-import { MovieService_create } from "./handler/MovieService_create.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

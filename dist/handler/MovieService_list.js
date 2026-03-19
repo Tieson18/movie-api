@@ -1,5 +1,5 @@
-import { movies } from "../store/movieStore.ts";
+import { movies } from "../store/movieStore.js";
 export function MovieService_list(c, _req, res) {
-    res.json(movies);
+  res.json(movies);
 }
 //# sourceMappingURL=MovieService_list.js.map
