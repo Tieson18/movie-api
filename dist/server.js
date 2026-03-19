@@ -13,8 +13,12 @@ import { MovieService_update } from "./handler/MovieService_update.js";
 import { MovieService_delete } from "./handler/MovieService_delete.js";
 import { MovieService_stats } from "./handler/MovieService_stats.js";
 import { MovieService_create } from "./handler/MovieService_create.js";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 app.use(express.json());
 console.log("✓ Express app created");
@@ -55,8 +59,8 @@ app.use((req, res) => {
   api.handleRequest(req, req, res);
 });
 console.log("✓ API middleware mounted");
-app.listen(3000, () => {
-  console.log("✓ Server running on http://localhost:3000");
-  console.log("✓ API Docs available at http://localhost:3000/docs");
+app.listen(PORT, () => {
+  console.log(`✓ Server running on http://localhost:${PORT}`);
+  console.log(`✓ API Docs available at http://localhost:${PORT}/docs`);
 });
 //# sourceMappingURL=server.js.map
