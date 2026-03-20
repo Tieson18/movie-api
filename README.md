@@ -1,35 +1,124 @@
-# Movie Catalog API - Reflection
+# 🎬 Movie Catalog API
 
-## Reflection
+## 📌 Project Overview
+
+This project is a RESTful Movie Catalog API built using Node.js,
+Express, TypeScript, and OpenAPI (Swagger). It follows a contract-first
+development approach, where the API specification is defined before
+implementation.
+
+------------------------------------------------------------------------
+
+## 🚀 Live API Documentation
+
+👉 https://movie-catalog-api-fwehcpdmh6bggtak.canadacentral-01.azurewebsites.net/docs
+
+------------------------------------------------------------------------
+
+## 💻 GitHub Repository
+
+👉 https://github.com/Tieson18/movie-api
+
+------------------------------------------------------------------------
+
+## 🛠️ Tech Stack
+
+-   Node.js
+-   Express.js
+-   TypeScript
+-   OpenAPI 3.0 (Swagger)
+-   Swagger UI
+-   OpenAPI Backend
+
+------------------------------------------------------------------------
+
+## ⚙️ Setup Instructions
+
+### 1. Clone Repository
+
+git clone https://github.com/Tieson18/movie-api.git cd
+movie-api
+
+### 2. Install Dependencies
+
+npm install
+
+### 3. Run in Development
+
+npm run dev
+
+### 4. Build for Production
+
+npm run build
+
+### 5. Start Production Server
+
+npm start
+
+------------------------------------------------------------------------
+
+## 📡 API Endpoints
+
+  Method   Endpoint        Description
+  -------- --------------- ----------------------
+  GET      /        Get all movies
+  POST     /        Create a new movie
+  GET      /{id}    Get a movie by ID
+  PUT      /{id}    Update a movie
+  DELETE   /{id}    Delete a movie
+  GET      /stats   Get movie statistics
+
+------------------------------------------------------------------------
+
+## 📄 Documentation Endpoints
+
+  Route           Purpose
+  --------------- ------------------------
+  /docs           Swagger UI
+  /openapi.yaml   Raw YAML specification
+  /openapi.json   JSON specification
+
+------------------------------------------------------------------------
+
+## 🧠 Reflection
 
 For this project, I chose the movie catalog domain because it is simple,
 intuitive, and widely understood. It allowed me to focus more on API
 design and implementation rather than complex business logic. Movies
-naturally map to structured data (title, director, genre, rating), which
-made them ideal for practicing RESTful API design and modeling.
+naturally map to structured data such as title, director, genre, and
+rating, making them ideal for practicing RESTful API development.
 
-For the technology stack, I used Node.js with Express and TypeScript,
-along with an OpenAPI specification. This combination provided strong
-typing, scalability, and alignment with modern backend development
-practices.
+I used Node.js with Express and TypeScript because they are widely used
+in modern backend development and provide strong typing and scalability.
+The addition of OpenAPI allowed me to define the API contract clearly
+before writing any code.
 
-One of the most important things I learned from this project was the
-concept of contract-first development. Instead of writing code first, I
-started by defining the API contract using the OpenAPI specification.
-This forced me to think carefully about endpoints, request/response
-structures, and validation rules before implementing any logic.
+One of the most important concepts I learned was contract-first
+development. Instead of starting with implementation, I began by
+designing the API specification using OpenAPI. This helped me clearly
+define endpoints, request and response structures, and validation rules.
+It also made it easier to test endpoints using Swagger UI.
 
-A major challenge I faced was ensuring that the OpenAPI specification,
-TypeScript code, and runtime behavior all stayed consistent. Small
-mistakes in the YAML file, such as indentation errors or duplicate keys,
-caused parsing failures. I also encountered issues with module
-resolution when working with ES modules and TypeScript.
+I faced several challenges during the project. YAML formatting errors,
+such as incorrect indentation or duplicate keys, caused parsing issues.
+I also encountered problems with TypeScript module resolution,
+especially when dealing with .ts vs .js imports in production.
+Deployment introduced additional challenges, including environment
+configuration and file path handling.
 
-Comparing the spec-driven approach to writing code first, I found that
-contract-first development provides a more structured workflow. While it
-may feel slower at the beginning, it ultimately saves time by preventing
-design inconsistencies and reducing debugging later.
+Compared to writing code first, the spec-driven approach is more
+structured and reliable. Although it requires more planning upfront, it
+reduces errors later and ensures consistency between the API design and
+implementation. Overall, contract-first development improves
+maintainability, documentation quality, and collaboration, making it a
+valuable approach for real-world projects.
 
-Overall, the spec-driven approach improves collaboration,
-maintainability, and documentation quality, making it valuable for
-larger or team-based projects. 
+------------------------------------------------------------------------
+
+## ✅ Submission Checklist
+
+-   [x] GitHub repository with full code
+-   [x] OpenAPI YAML file included
+-   [x] Working deployed API
+-   [x] Swagger UI accessible at /docs
+-   [x] Reflection included
