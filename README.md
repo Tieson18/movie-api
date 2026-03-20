@@ -32,4 +32,4 @@ design inconsistencies and reducing debugging later.
 
 Overall, the spec-driven approach improves collaboration,
 maintainability, and documentation quality, making it valuable for
-larger or team-based projects.
+larger or team-based projects. 
