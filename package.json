@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
-    "generate:types": "openapi-typescript movieopenapi.yaml -o ./types/handlers.ts"
+    "generate:types": "openapi-typescript movieopenapi.yaml -o ./types/movie.ts"
   },
   "keywords": [],
   "author": "",
