@@ -7,13 +7,17 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
-    "generate:types": "openapi-typescript movieopenapi.yaml -o ./types/movie.ts"
+    "generate:types": "openapi-typescript movieopenapi.yaml -o ./types/movie.ts",
+    "kiota:generate": "kiota generate -l typescript -d movieopenapi.yaml -c PostsClient -o ./client"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@microsoft/kiota-bundle": "^1.0.0-preview.100",
+    "@neondatabase/serverless": "^1.0.2",
+    "dotenv": "^17.4.1",
     "express": "^5.2.1",
     "openapi-backend": "^5.16.1",
     "openapi-typescript": "^7.13.0",
