@@ -13,15 +13,15 @@ import { MovieService_stats } from "./handler/MovieService_stats.ts";
 
 const app = express();
 
-app.use(express.json());
-console.log("✓ Express app created");
-
 const allowedOrigins = [
   "http://localhost:5173",
   "https://red-mud-0404c7e0f.6.azurestaticapps.net",
 ];
 
 app.use(cors({ origin: allowedOrigins }));
+
+app.use(express.json());
+console.log("✓ Express app created");
 
 const specPath = "./movieopenapi.yaml";
 
