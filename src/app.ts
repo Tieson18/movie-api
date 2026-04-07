@@ -2,11 +2,8 @@ import express, { type Request, type Response } from "express";
 import { OpenAPIBackend } from "openapi-backend";
 import swaggerUi from "swagger-ui-express";
 import YAML from "yamljs";
-// import { movieHandler } from "./handler/movieHandler.ts";
-import fs, { link } from "fs";
-import path from "path";
+import fs from "fs";
 import cors from "cors";
-import { fileURLToPath } from "url";
 import { MovieService_list } from "./handler/MovieService_list.ts";
 import { MovieService_create } from "./handler/MovieService_create.ts";
 import { MovieService_get } from "./handler/MovieService_get.ts";
@@ -14,20 +11,17 @@ import { MovieService_update } from "./handler/MovieService_update.ts";
 import { MovieService_delete } from "./handler/MovieService_delete.ts";
 import { MovieService_stats } from "./handler/MovieService_stats.ts";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const app = express();
 
 app.use(express.json());
 console.log("✓ Express app created");
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://red-mud-0404c7e0f.6.azurestaticapps.net/",
-];
+// const allowedOrigins = [
+//   "http://localhost:5173",
+//   "https://red-mud-0404c7e0f.6.azurestaticapps.net/",
+// ];
 
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors());
 
 const specPath = "./movieopenapi.yaml";
 
@@ -64,11 +58,6 @@ app.get("/openapi.json", (_req, res) => {
 });
 
 const spec = YAML.load("./movieopenapi.yaml");
-// console.log(
-//   "✓ API spec loaded with",
-//   Object.keys(movieHandler).length,
-//   "handlers",
-// );
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(spec));
 console.log("✓ Swagger UI mounted on /docs");
