@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "ts-node src/server.ts",
+    "dev": "ts-node src/index.ts",
     "generate:types": "openapi-typescript movieopenapi.yaml -o ./types/movie.ts",
     "kiota:generate": "kiota generate -l typescript -d movieopenapi.yaml -c movieClient -o ./client"
   },
