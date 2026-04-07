@@ -48,12 +48,12 @@ export function createMovieUpdateFromDiscriminatorValue(parseNode: ParseNode | u
 // @ts-ignore
 export function deserializeIntoMovie(movie: Partial<Movie> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "director": n => { movie.director = n.getStringValue(); },
-        "genre": n => { movie.genre = n.getStringValue(); },
-        "id": n => { movie.id = n.getStringValue(); },
-        "rating": n => { movie.rating = n.getNumberValue(); },
-        "releaseYear": n => { movie.releaseYear = n.getNumberValue(); },
-        "title": n => { movie.title = n.getStringValue(); },
+        "director": n => { movie.director = n.getStringValue() ?? null; },
+        "genre": n => { movie.genre = n.getStringValue() ?? null; },
+        "id": n => { movie.id = n.getStringValue() ?? null; },
+        "rating": n => { movie.rating = n.getNumberValue() ?? null; },
+        "releaseYear": n => { movie.releaseYear = n.getNumberValue() ?? null; },
+        "title": n => { movie.title = n.getStringValue() ?? null; },
     }
 }
 /**
@@ -64,8 +64,8 @@ export function deserializeIntoMovie(movie: Partial<Movie> | undefined = {}) : R
 // @ts-ignore
 export function deserializeIntoMovieCollectionWithNextLink(movieCollectionWithNextLink: Partial<MovieCollectionWithNextLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "nextLink": n => { movieCollectionWithNextLink.nextLink = n.getStringValue(); },
-        "value": n => { movieCollectionWithNextLink.value = n.getCollectionOfObjectValues<Movie>(createMovieFromDiscriminatorValue); },
+        "nextLink": n => { movieCollectionWithNextLink.nextLink = n.getStringValue() ?? null; },
+        "value": n => { movieCollectionWithNextLink.value = n.getCollectionOfObjectValues<Movie>(createMovieFromDiscriminatorValue) ?? null; },
     }
 }
 /**
@@ -76,11 +76,11 @@ export function deserializeIntoMovieCollectionWithNextLink(movieCollectionWithNe
 // @ts-ignore
 export function deserializeIntoMovieCreate(movieCreate: Partial<MovieCreate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "director": n => { movieCreate.director = n.getStringValue(); },
-        "genre": n => { movieCreate.genre = n.getStringValue(); },
-        "rating": n => { movieCreate.rating = n.getNumberValue(); },
-        "releaseYear": n => { movieCreate.releaseYear = n.getNumberValue(); },
-        "title": n => { movieCreate.title = n.getStringValue(); },
+        "director": n => { movieCreate.director = n.getStringValue() ?? null; },
+        "genre": n => { movieCreate.genre = n.getStringValue() ?? null; },
+        "rating": n => { movieCreate.rating = n.getNumberValue() ?? null; },
+        "releaseYear": n => { movieCreate.releaseYear = n.getNumberValue() ?? null; },
+        "title": n => { movieCreate.title = n.getStringValue() ?? null; },
     }
 }
 /**
@@ -91,11 +91,11 @@ export function deserializeIntoMovieCreate(movieCreate: Partial<MovieCreate> | u
 // @ts-ignore
 export function deserializeIntoMovieUpdate(movieUpdate: Partial<MovieUpdate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "director": n => { movieUpdate.director = n.getStringValue(); },
-        "genre": n => { movieUpdate.genre = n.getStringValue(); },
-        "rating": n => { movieUpdate.rating = n.getNumberValue(); },
-        "releaseYear": n => { movieUpdate.releaseYear = n.getNumberValue(); },
-        "title": n => { movieUpdate.title = n.getStringValue(); },
+        "director": n => { movieUpdate.director = n.getStringValue() ?? null; },
+        "genre": n => { movieUpdate.genre = n.getStringValue() ?? null; },
+        "rating": n => { movieUpdate.rating = n.getNumberValue() ?? null; },
+        "releaseYear": n => { movieUpdate.releaseYear = n.getNumberValue() ?? null; },
+        "title": n => { movieUpdate.title = n.getStringValue() ?? null; },
     }
 }
 export interface Movie extends AdditionalDataHolder, Parsable {

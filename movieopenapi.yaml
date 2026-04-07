@@ -4,7 +4,8 @@ info:
   version: 1.0.0
 
 servers:
-  - url: http://localhost:3000
+  - url: https://movie-catalog-api-fwehcpdmh6bggtak.canadacentral-01.azurewebsites.net/
+    description: Production server
 
 paths:
   /movies:
