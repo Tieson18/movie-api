@@ -16,12 +16,12 @@ const app = express();
 app.use(express.json());
 console.log("✓ Express app created");
 
-// const allowedOrigins = [
-//   "http://localhost:5173",
-//   "https://red-mud-0404c7e0f.6.azurestaticapps.net/",
-// ];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://red-mud-0404c7e0f.6.azurestaticapps.net",
+];
 
-app.use(cors());
+app.use(cors({ origin: allowedOrigins }));
 
 const specPath = "./movieopenapi.yaml";
 
