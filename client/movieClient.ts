@@ -86,7 +86,7 @@ export function createMovieClient(requestAdapter: RequestAdapter) {
     requestAdapter.baseUrl === ""
   ) {
     requestAdapter.baseUrl =
-      "https://movie-catalog-api-fwehcpdmh6bggtak.canadacentral-01.azurewebsites.net/";
+      "https://movie-catalog-api-fwehcpdmh6bggtak.canadacentral-01.azurewebsites.net/movies";
   }
   const pathParameters: Record<string, unknown> = {
     baseurl: requestAdapter.baseUrl,
