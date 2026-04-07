@@ -3,8 +3,9 @@ import { OpenAPIBackend } from "openapi-backend";
 import swaggerUi from "swagger-ui-express";
 import YAML from "yamljs";
 // import { movieHandler } from "./handler/movieHandler.ts";
-import fs from "fs";
+import fs, { link } from "fs";
 import path from "path";
+import cors from "cors";
 import { fileURLToPath } from "url";
 import { MovieService_list } from "./handler/MovieService_list.ts";
 import { MovieService_create } from "./handler/MovieService_create.ts";
@@ -19,6 +20,8 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(express.json());
 console.log("✓ Express app created");
+
+app.use(cors({ origin: "*" }));
 
 const specPath = "./movieopenapi.yaml";
 

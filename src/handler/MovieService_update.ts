@@ -9,7 +9,7 @@ export async function MovieService_update(
   res: Response,
 ): Promise<void> {
   const { id } = c.request.params;
-  const { title, director, releaseYear, genre, rating } = c.request.requestBody;
+  const { title, director, releaseYear, genre, rating } = _req.body;
 
   const result = await sql`
     UPDATE movies

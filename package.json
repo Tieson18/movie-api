@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
     "generate:types": "openapi-typescript movieopenapi.yaml -o ./types/movie.ts",
-    "kiota:generate": "kiota generate -l typescript -d movieopenapi.yaml -c PostsClient -o ./client"
+    "kiota:generate": "kiota generate -l typescript -d movieopenapi.yaml -c movieClient -o ./client"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@microsoft/kiota-bundle": "^1.0.0-preview.100",
     "@neondatabase/serverless": "^1.0.2",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.1",
     "express": "^5.2.1",
     "openapi-backend": "^5.16.1",

@@ -3,7 +3,7 @@
   "descriptionLocation": "../movieopenapi.yaml",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.30.0",
-  "clientClassName": "PostsClient",
+  "clientClassName": "movieClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "ApiSdk",
   "language": "TypeScript",

@@ -15,11 +15,11 @@ import { MultipartSerializationWriterFactory } from '@microsoft/kiota-serializat
 import { TextParseNodeFactory, TextSerializationWriterFactory } from '@microsoft/kiota-serialization-text';
 
 /**
- * Instantiates a new {@link PostsClient} and sets the default values.
+ * Instantiates a new {@link MovieClient} and sets the default values.
  * @param requestAdapter The request adapter to use to execute the requests.
  */
 // @ts-ignore
-export function createPostsClient(requestAdapter: RequestAdapter) {
+export function createMovieClient(requestAdapter: RequestAdapter) {
     if (requestAdapter === undefined) {
         throw new Error("requestAdapter cannot be undefined");
     }
@@ -46,12 +46,12 @@ export function createPostsClient(requestAdapter: RequestAdapter) {
     const pathParameters: Record<string, unknown> = {
         "baseurl": requestAdapter.baseUrl,
     };
-    return apiClientProxifier<PostsClient>(requestAdapter, pathParameters, PostsClientNavigationMetadata, undefined);
+    return apiClientProxifier<MovieClient>(requestAdapter, pathParameters, MovieClientNavigationMetadata, undefined);
 }
 /**
  * The main entry point of the SDK, exposes the configuration and the fluent API.
  */
-export interface PostsClient extends BaseRequestBuilder<PostsClient> {
+export interface MovieClient extends BaseRequestBuilder<MovieClient> {
     /**
      * The movies property
      */
@@ -60,11 +60,11 @@ export interface PostsClient extends BaseRequestBuilder<PostsClient> {
 /**
  * Uri template for the request builder.
  */
-export const PostsClientUriTemplate = "{+baseurl}";
+export const MovieClientUriTemplate = "{+baseurl}";
 /**
  * Metadata for all the navigation properties in the request builder.
  */
-export const PostsClientNavigationMetadata: Record<Exclude<keyof PostsClient, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+export const MovieClientNavigationMetadata: Record<Exclude<keyof MovieClient, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     movies: {
         requestsMetadata: MoviesRequestBuilderRequestsMetadata,
         navigationMetadata: MoviesRequestBuilderNavigationMetadata,

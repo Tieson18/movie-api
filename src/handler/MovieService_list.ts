@@ -9,5 +9,5 @@ export async function MovieService_list(
   res: Response,
 ): Promise<void> {
   const movies = await sql`SELECT * FROM movies`;
-  res.json(movies);
+  res.json({ value: movies });
 }
