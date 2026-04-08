@@ -13,7 +13,10 @@ import { MovieService_stats } from "./handler/MovieService_stats.ts";
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173", process.env.CLIENT_BASE_URL];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://mango-bush-0aa61300f.6.azurestaticapps.net",
+];
 
 app.use(cors({ origin: allowedOrigins }));
 
