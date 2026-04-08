@@ -15,7 +15,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://red-mud-0404c7e0f.6.azurestaticapps.net",
+  "https://mango-bush-0aa61300f.6.azurestaticapps.net",
 ];
 
 app.use(cors({ origin: allowedOrigins }));
