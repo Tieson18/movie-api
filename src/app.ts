@@ -26,7 +26,7 @@ app.use(express.json());
 console.log("✓ Express app created");
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const specPath = path.join(__dirname, "../../movieopenapi.yaml");
+const specPath = path.join(__dirname, "../movieopenapi.yaml");
 
 const api = new OpenAPIBackend({
   definition: specPath,
