@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: "24.x"
+          node-version: '24.x'
 
       - name: npm install, build, and test
         run: |
@@ -47,18 +47,19 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8DB32951ED6B4930B735016AD5536212 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8E194D3DC6C344A08A6E88FEAF5CF919 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4DFAF33A4FA648AA85E9E5CDB6D5420B }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_B06CF917B5C7405680B37672B9A9109D }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_80B08068F00E4A108642843941DA77C9 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4796967617DE459F88D4149F0042FF30 }}
 
-      - name: "Deploy to Azure Web App"
+      - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: "movie-catalog-api"
-          slot-name: "Production"
+          app-name: 'movie-catalog-api'
+          slot-name: 'Production'
           package: .
+          
