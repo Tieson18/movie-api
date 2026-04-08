@@ -8,18 +8,9 @@ export async function MovieService_delete(
   _req: Request,
   res: Response,
 ): Promise<void> {
-  // const { id } = c.request.params;
+  const { id } = c.request.params;
 
-  // await sql`DELETE FROM movies WHERE id = ${id}`;
+  await sql`DELETE FROM movies WHERE id = ${id}`;
 
-  // res.json({ message: "Deleted" });
-  const index = movies.findIndex((m) => m.id === c.request.params.id);
-
-  if (index === -1) {
-    res.status(404).json({ error: "Not found" });
-    return;
-  }
-
-  movies.splice(index, 1);
   res.json({ message: "Deleted" });
 }
