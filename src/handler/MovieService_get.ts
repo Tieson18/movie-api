@@ -7,15 +7,20 @@ export async function MovieService_get(
   _req: Request,
   res: any,
 ): Promise<void> {
-  const { id } = c.request.params;
+  // const { id } = c.request.params;
 
-  const result = await sql`
-    SELECT * FROM movies WHERE id = ${id}
-  `;
+  // const result = await sql`
+  //   SELECT * FROM movies WHERE id = ${id}
+  // `;
 
-  if (result.length === 0) {
-    return res.status(404).json({ error: "Not found" });
-  }
+  // if (result.length === 0) {
+  //   return res.status(404).json({ error: "Not found" });
+  // }
 
-  res.json(result[0]);
+  // res.json(result[0]);
+  const movie = movies.find((m) => m.id === c.request.params.id);
+
+  if (!movie) return res.status(404).json({ error: "Not found" });
+
+  res.json(movie);
 }

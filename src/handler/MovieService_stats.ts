@@ -7,13 +7,20 @@ export async function MovieService_stats(
   _req: Request,
   res: any,
 ): Promise<void> {
-  const result = await sql`
-    SELECT COUNT(*)::int AS total, AVG(rating)::float AS avg
-    FROM movies
-  `;
+  // const result = await sql`
+  //   SELECT COUNT(*)::int AS total, AVG(rating)::float AS avg
+  //   FROM movies
+  // `;
+
+  // res.json({
+  //   totalMovies: result[0]!.total,
+  //   averageRating: result[0]!.avg,
+  // });
+
+  const avg = movies.reduce((a, b) => a + b.rating, 0) / movies.length;
 
   res.json({
-    totalMovies: result[0]!.total,
-    averageRating: result[0]!.avg,
+    totalMovies: movies.length,
+    averageRating: avg,
   });
 }

@@ -8,6 +8,6 @@ export async function MovieService_list(
   _req: Request,
   res: Response,
 ): Promise<void> {
-  const movies = await sql`SELECT * FROM movies`;
+  // const movies = await sql`SELECT * FROM movies`;
   res.json({ value: movies });
 }

@@ -8,24 +8,34 @@ export async function MovieService_update(
   _req: Request,
   res: Response,
 ): Promise<void> {
-  const { id } = c.request.params;
-  const { title, director, releaseYear, genre, rating } = _req.body;
+  // const { id } = c.request.params;
+  // const { title, director, releaseYear, genre, rating } = _req.body;
 
-  const result = await sql`
-    UPDATE movies
-    SET title = ${title},
-        director = ${director},
-        release_year = ${releaseYear},
-        genre = ${genre},
-        rating = ${rating}
-    WHERE id = ${id}
-    RETURNING *
-  `;
+  // const result = await sql`
+  //   UPDATE movies
+  //   SET title = ${title},
+  //       director = ${director},
+  //       release_year = ${releaseYear},
+  //       genre = ${genre},
+  //       rating = ${rating}
+  //   WHERE id = ${id}
+  //   RETURNING *
+  // `;
 
-  if (result.length === 0) {
+  // if (result.length === 0) {
+  //   res.status(404).json({ error: "Not found" });
+  //   return;
+  // }
+
+  // res.json(result[0]);
+
+  const movie = movies.find(m => m.id === c.request.params.id);
+
+  if (!movie) {
     res.status(404).json({ error: "Not found" });
     return;
   }
 
-  res.json(result[0]);
+  Object.assign(movie, c.request.requestBody);
+  res.json(movie);
 }

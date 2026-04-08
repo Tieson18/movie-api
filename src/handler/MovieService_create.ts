@@ -9,13 +9,18 @@ export async function MovieService_create(
   _req: Request,
   res: Response,
 ): Promise<void> {
-  const { title, director, releaseYear, genre, rating } = c.request.requestBody;
+  // const { title, director, releaseYear, genre, rating } = c.request.requestBody;
 
-  const result = await sql`
-    INSERT INTO movies (id, title, director, release_year, genre, rating)
-    VALUES (gen_random_uuid(), ${title}, ${director}, ${releaseYear}, ${genre}, ${rating})
-    RETURNING *
-  `;
+  // const result = await sql`
+  //   INSERT INTO movies (id, title, director, release_year, genre, rating)
+  //   VALUES (gen_random_uuid(), ${title}, ${director}, ${releaseYear}, ${genre}, ${rating})
+  //   RETURNING *
+  // `;
 
-  res.status(201).json(result);
+  // res.status(201).json(result);
+
+  const body = c.request.requestBody;
+
+  const movie = { id: uuid(), ...body };
+  movies.push(movie);
 }
