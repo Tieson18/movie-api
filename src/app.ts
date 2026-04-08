@@ -19,6 +19,8 @@ const allowedOrigins = [
   "https://mango-bush-0aa61300f.6.azurestaticapps.net",
 ];
 
+console.log(process.env.CLIENT_BASE_URL);
+
 app.use(cors({ origin: allowedOrigins }));
 
 app.use(express.json());
