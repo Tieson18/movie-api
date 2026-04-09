@@ -3,30 +3,14 @@ import { movies } from "../store/movieStore.js";
 import type { Request, Response } from "express";
 import sql from "../config/database.js";
 
-// export async function MovieService_delete(
-//   c: Context,
-//   _req: Request,
-//   res: Response,
-// ): Promise<void> {
-//   const { id } = c.request.params;
-
-//   await sql`DELETE FROM movies WHERE id = ${id}`;
-
-//   res.json({ message: "Deleted" });
-// }
-
-export function MovieService_delete(
-  c: any,
+export async function MovieService_delete(
+  c: Context,
   _req: Request,
   res: Response,
-): void {
-  const index = movies.findIndex((m) => m.id === c.request.params.id);
+): Promise<void> {
+  const { id } = c.request.params;
 
-  if (index === -1) {
-    res.status(404).json({ error: "Not found" });
-    return;
-  }
+  await sql`DELETE FROM movies WHERE id = ${id}`;
 
-  movies.splice(index, 1);
   res.json({ message: "Deleted" });
 }
