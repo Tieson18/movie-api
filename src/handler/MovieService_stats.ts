@@ -23,6 +23,6 @@ export function MovieService_stats(_c: any, _req: Request, res: any): void {
 
   res.json({
     totalMovies: movies.length,
-    averageRating: avg
+    averageRating: avg,
   });
 }
