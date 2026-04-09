@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import { movies } from "../store/movieStore.ts";
+import { movies } from "../store/movieStore.js";
 import type { Context } from "openapi-backend";
-import sql from "../config/database.ts";
+import sql from "../config/database.js";
 
 // export async function MovieService_list(
 //   c: Context,

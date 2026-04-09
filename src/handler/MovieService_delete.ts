@@ -1,7 +1,7 @@
 import type { Context } from "openapi-backend";
-import { movies } from "../store/movieStore.ts";
+import { movies } from "../store/movieStore.js";
 import type { Request, Response } from "express";
-import sql from "../config/database.ts";
+import sql from "../config/database.js";
 
 // export async function MovieService_delete(
 //   c: Context,

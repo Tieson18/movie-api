@@ -5,21 +5,19 @@ import YAML from "yamljs";
 import fs from "fs";
 import cors from "cors";
 import path from "path";
-import { MovieService_list } from "./handler/MovieService_list.ts";
-import { MovieService_create } from "./handler/MovieService_create.ts";
-import { MovieService_get } from "./handler/MovieService_get.ts";
-import { MovieService_update } from "./handler/MovieService_update.ts";
-import { MovieService_delete } from "./handler/MovieService_delete.ts";
-import { MovieService_stats } from "./handler/MovieService_stats.ts";
+import { MovieService_list } from "./handler/MovieService_list.js";
+import { MovieService_create } from "./handler/MovieService_create.js";
+import { MovieService_get } from "./handler/MovieService_get.js";
+import { MovieService_update } from "./handler/MovieService_update.js";
+import { MovieService_delete } from "./handler/MovieService_delete.js";
+import { MovieService_stats } from "./handler/MovieService_stats.js";
 
 const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://mango-bush-0aa61300f.6.azurestaticapps.net",
-];
-
-console.log(process.env.CLIENT_BASE_URL);
+  process.env.CLIENT_BASE_URL,
+].filter((origin): origin is string => origin !== undefined);
 
 app.use(cors({ origin: allowedOrigins }));
 
