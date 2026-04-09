@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node src/index.ts",
-    "dev": "ts-node src/index.ts",
+    "start": "node src/index.ts",
+    "dev": "node src/index.ts",
     "generate:types": "openapi-typescript movieopenapi.yaml -o ./types/movie.ts",
     "kiota:generate": "kiota generate -l typescript -d movieopenapi.yaml -c movieClient -o ./client"
   },
@@ -27,6 +27,7 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.5.0",
     "@types/swagger-ui-express": "^4.1.8",
