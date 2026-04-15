@@ -11,7 +11,7 @@ implementation.
 
 ## 🚀 Live API Documentation
 
-👉 https://movie-catalog-api-fwehcpdmh6bggtak.canadacentral-01.azurewebsites.net/docs
+👉 https://movie-catalog-api-fwehcpdmh6bggtak.eastus2-01.azurewebsites.net/docs
 
 ------------------------------------------------------------------------
 
