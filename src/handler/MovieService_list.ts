@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { movies } from "../store/movieStore.js";
+// import { movies } from "../store/movieStore.js";
 import type { Context } from "openapi-backend";
 import sql from "../config/database.js";
 
